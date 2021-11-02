@@ -1,5 +1,3 @@
-// import getData from './requests';
-
 function searchCity(e) {
     e.preventDefault();
     let state = '';

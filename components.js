@@ -1,5 +1,4 @@
 function createCard(listing) {
-
     let url = listing.medias[0].url;
     let address = listing.listing.address
 
