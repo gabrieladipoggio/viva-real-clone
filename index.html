@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viva Real</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>
+                <a href="#"><img src="viva-logo.png"></a>
+            </h1>
+            <div class="nav-links">
+                <ul class="links-left">
+                    <li><a href="#">Comprar</a></li>
+                    <li><a href="#">Alugar</a></li>
+                    <li><a href="#">Imóveis novos</a></li>
+                    <li><a href="#">Descobrir</a></li>
+                    <li><a href="#">Financiamento</a></li>
+                </ul>
+                <ul class="links-right">
+                    <li><a href="#">Anunciar imóveis</a></li>
+                    <li><a href="#">Entrar</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="breadcrumbs">
+            <a href="#"> Viva Real </a>
+            <span>●</span>
+            <a href="#"> Venda </a>
+            <span class="divider">●</span>
+            <a href="#" id="breadcrumb-state">  </a>
+            <span class="divider">●</span>
+            <a href="#" id="breadcrumb-city"> </a>
+        </div>
+        <div class="page-wrapper">
+            <div class="left-column">
+                <section class="search">
+                    <form>
+                        <label for="search">Localização do imóvel</label>
+                        <input type="search" placeholder="Digite uma rua, bairro ou cidade" id="search" list="searchOptions" onblur="searchCity()">
+                        <datalist id="searchOptions">
+                            <option value="Rio de Janeiro">
+                            <option value="São Paulo">
+                        </datalist>
+                    </form>
+                    <div class="name-delete" id="name-delete">
+                        
+                    </div>
+                    <h6>Imóvel com</h6>
+                    <div class="slider-wrapper">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <p>Tour Virtual ou Vídeos</p>
+                    </div>
+                    <h6>Tipo de imóvel</h6>
+                    <div class="mock-input">
+                        <p>Mostrar todos</p>
+                        <span class="material-icons">
+                            keyboard_arrow_down
+                        </span>
+                    </div>
+                    <div class="name-delete">
+                        <p>Apartamento</p>
+                        <span class="material-icons">
+                            close
+                        </span>
+                    </div>
+                    <div class="prices">
+                        <div class="price-min">
+                            <h6>Preço mínimo</h6>
+                            <div class="mock-input">R$</div>
+                        </div>
+                        <div class="price-max">
+                            <h6>Preço máximo</h6>
+                            <div class="mock-input">R$ ilimitado</div>
+                        </div>
+                    </div>
+                    <div class="room-qt">
+                        <h6>Número de quartos</h6>
+                        <div class="quantity">
+                            <span>1+</span>
+                            <span>2+</span>
+                            <span>3+</span>
+                            <span>4+</span>
+                            <span>5+</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="amenities"> 
+                    <div class="area">
+                        <div class="area-min">
+                            <h6>Área mínima</h6>
+                            <div class="mock-input">m²</div>
+                        </div>
+                        <div class="area-max">
+                            <h6>Área máxima</h6>
+                            <div class="mock-input">ilimitado m²</div>
+                        </div>
+                    </div>
+                    <div class="parking">
+                        <h6>Número de vagas na garagem</h6>
+                        <div class="quantity">
+                            <span>1+</span>
+                            <span>2+</span>
+                            <span>3+</span>
+                            <span>4+</span>
+                            <span>5+</span>
+                        </div>
+                    </div>
+                    <div class="wc">
+                        <h6>Número de banheiros</h6>
+                        <div class="quantity">
+                            <span>1+</span>
+                            <span>2+</span>
+                            <span>3+</span>
+                            <span>4+</span>
+                            <span>5+</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <section class="main-section">
+                <div class="main-header">
+                    <div class="categories">
+                        <h5>Comprar</h5>
+                        <h5>Alugar</h5>
+                        <h5>Imóveis novos</h5>
+                    </div>
+                    <div class="display-icons">
+                        <div class="order-by">
+                            <span class="material-icons">
+                                filter_list
+                            </span>
+                            <p>Ordenar por</p>
+                        </div>
+                        <span class="material-icons">
+                            view_list
+                        </span>
+                        <span class="material-icons">
+                            view_compact
+                            </span>
+                        <span class="material-icons">
+                            view_module
+                        </span>
+                    </div>
+                </div>
+                <div id="main-content" class="main-content">
+
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
