@@ -1,5 +1,3 @@
-
-
 function renderHTML(state, city, res) {
     let mainDiv = document.getElementById('main-content');
     mainDiv.innerHTML = ''
