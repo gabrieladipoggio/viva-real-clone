@@ -46,7 +46,10 @@ function createCard(listing) {
     infoWrapper.appendChild(divPricingInfoWrapper);
     divPricingInfoWrapper.appendChild(divPricingInfo);
     divPricingInfoWrapper.className = 'pricing-info';
-    divPricingInfo.innerHTML = `<p>R$ ${listing.listing.pricingInfos[0].price}</p><p>Condomínio: <span>R$ ${listing.listing.pricingInfos[0].monthlyCondoFee},00 </span> </p>`
+
+    let condoFee = listing.listing.pricingInfos[0].monthlyCondoFee;
+    let price = listing.listing.pricingInfos[0].price;
+    divPricingInfo.innerHTML = `<p>${parsePrice(price)}</p> <p>Condomínio: <span>R$ ${formatCondoFee(condoFee)}</span> </p>`
 
     return cardMain
 }
