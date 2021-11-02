@@ -38,18 +38,14 @@ function translateAmenity(amenity){
     return dictionary[amenity]
 }
 
-function formatCondoFee(price){
+function formatPrice(price){
     if (price === undefined){
         return '-'
     } else {
-        return `${price},00`;    
-    }        
-}
-
-function parsePrice(price){
-    var formatter = new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL',
-    });
-    return formatter.format(price);
+        var formatter = new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+        });
+        return formatter.format(price);
+    }
 }

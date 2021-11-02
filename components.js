@@ -49,7 +49,7 @@ function createCard(listing) {
 
     let condoFee = listing.listing.pricingInfos[0].monthlyCondoFee;
     let price = listing.listing.pricingInfos[0].price;
-    divPricingInfo.innerHTML = `<p>${parsePrice(price)}</p> <p>Condomínio: <span>R$ ${formatCondoFee(condoFee)}</span> </p>`
+    divPricingInfo.innerHTML = `<p>${formatPrice(price)}</p> <p>Condomínio: <span>${formatPrice(condoFee)}</span> </p>`
 
     return cardMain
 }
