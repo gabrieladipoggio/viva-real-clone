@@ -49,7 +49,7 @@
                 <section class="search">
                     <form>
                         <label for="search">Localização do imóvel</label>
-                        <input type="search" placeholder="Digite uma rua, bairro ou cidade" id="search" list="searchOptions" onblur="searchCity()">
+                        <input type="search" id = "searchInput" placeholder="Digite uma rua, bairro ou cidade" list="searchOptions">
                         <datalist id="searchOptions">
                             <option value="Rio de Janeiro">
                             <option value="São Paulo">
@@ -164,6 +164,10 @@
             </section>
         </div>
     </main>
+    <script src="requests.js"></script>
+    <script src="eventListener.js"></script>
+    <script src="components.js"></script>
+    <script src="utils.js"></script>
     <script src="script.js"></script>
 
 </body>
