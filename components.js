@@ -1,54 +1,52 @@
 function createCard(listing) {
-    let cardMain = document.createElement('div');
-    let img = document.createElement('img');
-    let divWrapper = document.createElement('div');
-    let divInfoWrapper = document.createElement('div');
-    let spanAddress = document.createElement('span');
-    let divName = document.createElement('div');
-    let spanInfo = document.createElement('span');
-    let divAmenitiesWrapper = document.createElement('div');
-
-    let divPricingInfoWrapper = document.createElement('div');
-    let divPricingInfo = document.createElement('div');
 
     let url = listing.medias[0].url;
     let address = listing.listing.address
+
+    let cardMain = document.createElement('div');
+    let img = document.createElement('img');
+    let cardWrapper = document.createElement('div');
 
     img.className = 'result-img';
     img.src = `${url}`;
     cardMain.appendChild(img);
 
     cardMain.className = 'result-card';
-    cardMain.appendChild(divWrapper);
+    cardMain.appendChild(cardWrapper);
+    cardWrapper.className = 'result-info';
 
-    divWrapper.className = 'result-info';
-    divWrapper.appendChild(spanAddress);
-    spanAddress.innerText = `${address.street}, ${address.streetNumber} - ${address.neighborhood}, ${address.city} - ${address.stateAcronym}`;
+    let infoWrapper = document.createElement('div');
+    let divAddress = document.createElement('div');
+    cardWrapper.appendChild(infoWrapper);
+    infoWrapper.appendChild(divAddress);
+    infoWrapper.className = 'info-wrapper'
+    divAddress.innerText = `${address.street}, ${address.streetNumber} - ${address.neighborhood}, ${address.city} - ${address.stateAcronym}`;
 
-    divWrapper.appendChild(divName);
+    let divName = document.createElement('div');
+    infoWrapper.appendChild(divName);
     divName.innerText = listing.listing.title;
 
-    divWrapper.appendChild(divInfoWrapper);
-    divInfoWrapper.className = 'info-wrapper';
-    divInfoWrapper.appendChild(spanInfo);
-    spanInfo.innerText = `${listing.listing.usableAreas}m² ${listing.listing.bedrooms} Quartos ${listing.listing.bathrooms} Banheiros ${listing.listing.parkingSpaces} Vaga`;
+    let divAreas = document.createElement('div');
+    infoWrapper.appendChild(divAreas);
+    divAreas.innerHTML = `<span>${listing.listing.usableAreas}</span>m² <span>${listing.listing.bedrooms}</span> Quartos <span>${listing.listing.bathrooms}</span> Banheiros <span>${listing.listing.parkingSpaces}</span> Vaga`;
 
+    let divAmenitiesWrapper = document.createElement('div');
+    divAmenitiesWrapper.className = 'span-amenities';
 
-    divInfoWrapper.appendChild(divAmenitiesWrapper);
+    infoWrapper.appendChild(divAmenitiesWrapper);
     listing.listing.amenities.forEach(amenity => {
         let spanAmenity = document.createElement('span');
         amenity = translateAmenity(amenity);
         divAmenitiesWrapper.appendChild(spanAmenity);
-        spanAmenity.className = 'span-amenities';
         spanAmenity.innerText = amenity
     })
 
-    divWrapper.appendChild(divPricingInfoWrapper);
-    divPricingInfoWrapper.className = 'pricing-wrapper';
+    let divPricingInfoWrapper = document.createElement('div');
+    let divPricingInfo = document.createElement('div');
+    infoWrapper.appendChild(divPricingInfoWrapper);
     divPricingInfoWrapper.appendChild(divPricingInfo);
-
-    divPricingInfo.className = 'pricing-info';
-    divPricingInfo.innerHTML = `R$${listing.listing.pricingInfos[0].price} <p>Condomínio: ${listing.listing.pricingInfos[0].monthlyCondoFee} </p>`
+    divPricingInfoWrapper.className = 'pricing-info';
+    divPricingInfo.innerHTML = `<p>R$ ${listing.listing.pricingInfos[0].price}</p><p>Condomínio: <span>R$ ${listing.listing.pricingInfos[0].monthlyCondoFee},00 </span> </p>`
 
     return cardMain
 }
